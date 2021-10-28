@@ -17,7 +17,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.pushButton.clicked.connect(self.order)
 
     def order(self):
-        lst = []
+        lst = ["Ваш заказ:", " "]
         if self.cheeseburger.isChecked():
             lst.append("чизбургер")
 
@@ -31,7 +31,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             lst.append("наггетсы")
 
 
-        self.plainTextEdit.setPlainText(f'Ваш заказ: {" ".join(lst)}')
+        self.plainTextEdit.setPlainText('\n'.join(map(str, lst)))
 
 
 
